@@ -16,15 +16,17 @@ import java.util.ArrayList;
 @Builder
 public class Comerciante extends Pessoa {
 
+    @Column(unique = true)
     private String razaoSocial;
-
+    @Column(unique = true)
+    private String nomeFantasia;
     @Column(unique = true)
     private String cpf_cnpj;
 
     private Segmento segmento;
-    private String informacaoes;
+    private String informacoes;
     private ArrayList<Produto> produtos;
     private boolean habilitado;
-    private Compras compras;
+    private Compra pedidosRecebidos;
 
 }

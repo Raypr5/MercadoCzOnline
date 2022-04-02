@@ -20,16 +20,11 @@ public abstract class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-
-    private String nome;
-
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate dataCadastramento;
-
     private String email;
+    private String whatsapp;
     private BufferedImage foto;
-
-    private String whats;
 
 
 }

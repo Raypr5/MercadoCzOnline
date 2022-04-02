@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import java.util.ArrayList;
+import java.util.Date;
 
 @Entity
 @NoArgsConstructor
@@ -17,9 +19,17 @@ import javax.persistence.Entity;
 public class Cliente extends  Pessoa{
 
     @Column(unique = true)
+    private String nomeCompleto;
+    @Column(unique = true)
     private String cpf;
 
+    private Date dataNascimento;
 
     @Embedded
     private Endereco endereco;
+
+    private ArrayList<TipoCartao> cartoes;
+    private ArrayList<Produto> sacola;
+    private ArrayList<Produto> listaDeDesejos;
+    private ArrayList<Compra> comprasRealizadas;
 }
