@@ -1,15 +1,20 @@
-package br.edu.catolica.ppi.ProjetoMC.models;
+package br.edu.catolica.ppi.ProjetoMC.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Embeddable;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.UUID;
 
+// aqui não precisa fazer o Entity, pois ele vai embutido na tabela(classe aqui) Cliente
+@Embeddable
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
