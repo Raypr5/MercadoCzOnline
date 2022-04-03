@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.net.URL;
 import java.util.UUID;
 
 @Entity
@@ -13,12 +14,11 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Categoria {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+public class TipoPix extends TipoPagamento{
 
     @Column(unique = true)
-    private String nome;
+    private Integer qrCode;
+
+    @Column(unique = true)
+    private URL link;
 }

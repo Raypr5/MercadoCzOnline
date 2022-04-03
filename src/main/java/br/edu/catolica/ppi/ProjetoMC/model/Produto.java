@@ -26,14 +26,16 @@ public class Produto {
 
     private String nome;
     private String descricao;
-    private BufferedImage foto;
+    // private BufferedImage foto; PRECISO ACHAR UMA OUTRA FORMA DE COLOCAR ESSA FOTO NO BANCO
     private Float valor;
     private Boolean habilitarDesconto;
     private Float valorDesconto;
-    private Categoria categoria;
+    // private Categoria categoria;
     private Float estoque;
     private Integer vezesComprado;
     private ArrayList<String> avaliacoes;
     private ArrayList<String> comentarios;
-    private Comerciante comerciante;
+    // private Comerciante comerciante;
+    //AQUI ESTÁ COMENTANDO AINDA, POIS EU NÃO SEI COLOCAR A NOTAÇÃO EM CADA ATRIBUTADO QUE ESTÁ ASSOCIADO COM OUTRA
+    //    CLASSE
 }

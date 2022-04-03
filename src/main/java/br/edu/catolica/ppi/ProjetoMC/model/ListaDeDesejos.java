@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.ArrayList;
 import java.util.UUID;
 
 @Entity
@@ -16,17 +17,11 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Compra {
+public class ListaDeDesejos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-
-    /*
-    private Produto produto;
-    private Cliente cliente;
-
-     */
-
+    //private ArrayList<Produto> produtos; revisar as aulas de Luciano
 }

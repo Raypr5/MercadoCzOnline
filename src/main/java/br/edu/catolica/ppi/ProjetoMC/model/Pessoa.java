@@ -24,7 +24,7 @@ public abstract class Pessoa {
     private LocalDate dataCadastramento;
     private String email;
     private String whatsapp;
-    private BufferedImage foto;
+    // private BufferedImage foto; PRECISO ACHAR UMA FORMA MELHOR DE COLOCAR ESSA FOTO NO BANCO
 
 
 }

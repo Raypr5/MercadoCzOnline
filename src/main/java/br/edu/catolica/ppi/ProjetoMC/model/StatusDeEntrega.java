@@ -1,5 +1,7 @@
 package br.edu.catolica.ppi.ProjetoMC.model;
 
+
+import br.edu.catolica.ppi.ProjetoMC.enums.Status;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,19 +16,13 @@ import java.util.UUID;
 @Entity
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class Compra {
+@AllArgsConstructor
+public class StatusDeEntrega {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-
-    /*
-    private Produto produto;
-    private Cliente cliente;
-
-     */
-
+    // private Status nome; // aqui vai ser um ENUM, ou ENVIADO, ou ENTREGUE, como tem lá na classe Status em ENUMS
 }

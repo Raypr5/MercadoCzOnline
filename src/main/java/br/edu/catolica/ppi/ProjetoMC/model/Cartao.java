@@ -5,28 +5,27 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
-@Data
 @Builder
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Compra {
+public class Cartao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
+    @Column(unique = true)
+    private Integer numero;
 
-    /*
-    private Produto produto;
-    private Cliente cliente;
+    @Column(unique = true)
+    private String nomeDoDono;
 
-     */
-
+    private Date validade;
+    private Integer cvv;
 }

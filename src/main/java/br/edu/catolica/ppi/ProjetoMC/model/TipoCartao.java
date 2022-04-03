@@ -13,12 +13,10 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Categoria {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+public class TipoCartao extends TipoPagamento{
 
     @Column(unique = true)
     private String nome;
+
+    private Integer parcelas;
 }

@@ -23,10 +23,11 @@ public class Comerciante extends Pessoa {
     @Column(unique = true)
     private String cpf_cnpj;
 
-    private Segmento segmento;
+    // private Segmento segmento;
     private String informacoes;
-    private ArrayList<Produto> produtos;
+    // private ArrayList<Produto> produtos;
     private boolean habilitado;
-    private Compra pedidosRecebidos;
-
+    // private Compra pedidosRecebidos;
+    // AQUI ESTÁ COMENTANDO AINDA, POIS EU NÃO SEI COLOCAR A NOTAÇÃO EM CADA ATRIBUTADO QUE ESTÁ ASSOCIADO COM OUTRA
+    //    CLASSE
 }

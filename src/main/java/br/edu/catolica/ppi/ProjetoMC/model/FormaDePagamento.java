@@ -16,17 +16,11 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Compra {
+public class FormaDePagamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-
-    /*
-    private Produto produto;
-    private Cliente cliente;
-
-     */
-
+    // private TipoPagamento tipo; rever aula de luciano
 }

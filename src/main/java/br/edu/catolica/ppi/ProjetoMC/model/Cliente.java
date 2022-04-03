@@ -28,8 +28,13 @@ public class Cliente extends  Pessoa{
     @Embedded
     private Endereco endereco;
 
+    /*
     private ArrayList<TipoCartao> cartoes;
     private ArrayList<Produto> sacola;
     private ArrayList<Produto> listaDeDesejos;
     private ArrayList<Compra> comprasRealizadas;
+
+    AQUI ESTÁ COMENTANDO AINDA, POIS EU NÃO SEI COLOCAR A NOTAÇÃO EM CADA ATRIBUTADO QUE ESTÁ ASSOCIADO COM OUTRA
+    CLASSE
+     */
 }
