@@ -1,11 +1,13 @@
 package br.edu.catolica.ppi.ProjetoMC.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
@@ -26,6 +28,8 @@ public class Cartao {
     @Column(unique = true)
     private String nomeDoDono;
 
-    private Date validade;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/yy")
+    private LocalDate validade;
+
     private Integer cvv;
 }

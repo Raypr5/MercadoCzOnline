@@ -5,11 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -23,18 +23,22 @@ public class Cliente extends  Pessoa{
     @Column(unique = true)
     private String cpf;
 
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
 
     @Embedded
     private Endereco endereco;
 
-    /*
-    private ArrayList<TipoCartao> cartoes;
-    private ArrayList<Produto> sacola;
-    private ArrayList<Produto> listaDeDesejos;
-    private ArrayList<Compra> comprasRealizadas;
+    @OneToMany
+    private List<TipoCartao> cartoes;
 
-    AQUI ESTÁ COMENTANDO AINDA, POIS EU NÃO SEI COLOCAR A NOTAÇÃO EM CADA ATRIBUTADO QUE ESTÁ ASSOCIADO COM OUTRA
-    CLASSE
-     */
+    @OneToOne
+    private Sacola sacola;
+
+    @OneToOne
+    private ListaDeDesejos listaDeDesejos;
+
+    @OneToMany
+    private List<Compra> comprasRealizadas;
+
+
 }

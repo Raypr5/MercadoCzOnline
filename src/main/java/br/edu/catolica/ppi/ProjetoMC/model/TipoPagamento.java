@@ -17,4 +17,6 @@ public abstract class TipoPagamento {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+
+    private Integer parcelas;
 }

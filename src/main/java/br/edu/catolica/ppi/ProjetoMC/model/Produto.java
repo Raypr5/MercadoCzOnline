@@ -5,12 +5,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -30,12 +28,15 @@ public class Produto {
     private Float valor;
     private Boolean habilitarDesconto;
     private Float valorDesconto;
-    // private Categoria categoria;
+
+    @OneToOne
+    private Categoria categoria;
+
     private Float estoque;
     private Integer vezesComprado;
-    private ArrayList<String> avaliacoes;
-    private ArrayList<String> comentarios;
-    // private Comerciante comerciante;
-    //AQUI ESTÁ COMENTANDO AINDA, POIS EU NÃO SEI COLOCAR A NOTAÇÃO EM CADA ATRIBUTADO QUE ESTÁ ASSOCIADO COM OUTRA
-    //    CLASSE
+    private List<String> avaliacoes;
+    private List<String> comentarios;
+
+    @OneToMany
+    private List<Comerciante> comerciante;
 }

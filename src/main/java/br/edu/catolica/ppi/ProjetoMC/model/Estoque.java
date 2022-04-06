@@ -5,22 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.util.ArrayList;
+import javax.persistence.Embeddable;
 import java.util.List;
-import java.util.UUID;
 
-@Entity
-@Data
+@Embeddable
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Sacola {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
-
-    @OneToMany
+@Data
+public class Estoque {
+    private Double quantidade;
     private List<Produto> produtos;
 }

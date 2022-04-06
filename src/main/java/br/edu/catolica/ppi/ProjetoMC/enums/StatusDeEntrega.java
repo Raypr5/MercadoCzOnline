@@ -1,6 +1,6 @@
 package br.edu.catolica.ppi.ProjetoMC.enums;
 
-public enum Status {
+public enum StatusDeEntrega {
     ENVIADO,
     ENTREGUE
 }

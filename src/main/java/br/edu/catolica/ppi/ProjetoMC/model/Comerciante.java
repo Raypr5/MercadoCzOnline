@@ -1,13 +1,14 @@
 package br.edu.catolica.ppi.ProjetoMC.model;
 
+import br.edu.catolica.ppi.ProjetoMC.enums.Segmento;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -23,11 +24,17 @@ public class Comerciante extends Pessoa {
     @Column(unique = true)
     private String cpf_cnpj;
 
-    // private Segmento segmento;
+    @Enumerated(EnumType.STRING)
+    private Segmento segmento;
+
     private String informacoes;
-    // private ArrayList<Produto> produtos;
+
+    @OneToOne
+    @Embedded
+    private Estoque estoque;
+
     private boolean habilitado;
-    // private Compra pedidosRecebidos;
-    // AQUI ESTÁ COMENTANDO AINDA, POIS EU NÃO SEI COLOCAR A NOTAÇÃO EM CADA ATRIBUTADO QUE ESTÁ ASSOCIADO COM OUTRA
-    //    CLASSE
+
+    @OneToMany
+    private List<Compra> pedidosRecebidos;
 }
