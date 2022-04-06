@@ -27,11 +27,10 @@ public class Comerciante extends Pessoa {
     @Enumerated(EnumType.STRING)
     private Segmento segmento;
 
-    private String informacoes;
-
-    @OneToOne
     @Embedded
     private Estoque estoque;
+
+    private String informacoes;
 
     private boolean habilitado;
 

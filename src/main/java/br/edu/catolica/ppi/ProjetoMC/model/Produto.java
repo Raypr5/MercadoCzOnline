@@ -1,5 +1,6 @@
 package br.edu.catolica.ppi.ProjetoMC.model;
 
+import br.edu.catolica.ppi.ProjetoMC.enums.Categoria;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,14 +30,12 @@ public class Produto {
     private Boolean habilitarDesconto;
     private Float valorDesconto;
 
-    @OneToOne
+    @Enumerated(EnumType.STRING)
     private Categoria categoria;
 
-    private Float estoque;
     private Integer vezesComprado;
-    private List<String> avaliacoes;
-    private List<String> comentarios;
 
-    @OneToMany
-    private List<Comerciante> comerciante;
+    private ArrayList<String> avaliacoes;
+    private ArrayList<String> comentarios;
+
 }

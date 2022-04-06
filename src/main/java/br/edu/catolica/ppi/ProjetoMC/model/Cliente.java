@@ -1,5 +1,6 @@
 package br.edu.catolica.ppi.ProjetoMC.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,13 +24,14 @@ public class Cliente extends  Pessoa{
     @Column(unique = true)
     private String cpf;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate dataNascimento;
 
     @Embedded
     private Endereco endereco;
 
     @OneToMany
-    private List<TipoCartao> cartoes;
+    private List<Cartao> cartoes;
 
     @OneToOne
     private Sacola sacola;
