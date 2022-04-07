@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/tipoBoleto")
+@RequestMapping("/tipo-boleto")
 public class TipoBoletoController {
 
     private final TipoBoletoService tipoBoletoService;
@@ -18,7 +18,7 @@ public class TipoBoletoController {
         this.tipoBoletoService = tipoBoletoService;
     }
 
-    @PostMapping("/save")
+    @PostMapping("/salvar")
     public ResponseEntity save(@RequestBody TipoBoleto tipoBoleto){
         return ResponseEntity.ok()
                 .body(tipoBoletoService.saveOrUpdate(tipoBoleto));
