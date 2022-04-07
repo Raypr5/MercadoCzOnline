@@ -19,7 +19,7 @@ public class ClienteController {
         this.clienteService = clienteService;
     }
 
-    @PostMapping("/save")
+    @PostMapping("/salvar")
     public ResponseEntity save(@RequestBody Cliente cliente){
         return ResponseEntity.ok()
                 .body(clienteService.saveOrUpdate(cliente));
