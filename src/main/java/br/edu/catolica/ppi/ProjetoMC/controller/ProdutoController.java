@@ -20,7 +20,7 @@ public class ProdutoController {
         this.produtoService = produtoService;
     }
 
-    @PostMapping("/save")
+    @PostMapping("/salvar")
     public ResponseEntity save(@RequestBody Produto produto){
         return ResponseEntity.ok()
                 .body(produtoService.saveOrUpdate(produto));

@@ -18,7 +18,7 @@ public class CartaoController {
         this.cartaoService = cartaoService;
     }
 
-    @PostMapping("/save")
+    @PostMapping("/salvar")
     public ResponseEntity save(@RequestBody Cartao cartao){
         return ResponseEntity.ok()
                 .body(cartaoService.saveOrUpdate(cartao));
