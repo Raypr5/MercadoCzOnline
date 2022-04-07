@@ -16,6 +16,9 @@ import java.util.UUID;
 @NoArgsConstructor
 public class TipoPix extends TipoPagamento{
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
+
     @Column(unique = true)
     private Integer qrCode;
 
