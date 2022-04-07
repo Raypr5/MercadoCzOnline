@@ -19,10 +19,6 @@ public class CartaoService {
         return cartaoRepository.save(cartao);
     }
 
-    public List<Cartao> getAllCartao(){
-        return cartaoRepository.findAll();
-    }
-
     public Cartao findById(UUID id){
         return cartaoRepository.findById(id).get();
     }

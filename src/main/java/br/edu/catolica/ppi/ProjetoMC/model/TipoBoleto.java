@@ -16,6 +16,10 @@ import java.util.UUID;
 @NoArgsConstructor
 public class TipoBoleto extends TipoPagamento{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
+
     @Column(unique = true)
     private URL linkPdf;
 
