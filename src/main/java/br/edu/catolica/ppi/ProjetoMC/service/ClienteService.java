@@ -3,7 +3,6 @@ package br.edu.catolica.ppi.ProjetoMC.service;
 import br.edu.catolica.ppi.ProjetoMC.model.Cliente;
 import br.edu.catolica.ppi.ProjetoMC.model.Produto;
 import br.edu.catolica.ppi.ProjetoMC.repository.ClienteRepository;
-import br.edu.catolica.ppi.ProjetoMC.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
