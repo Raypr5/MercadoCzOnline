@@ -16,20 +16,20 @@ public class ProdutoService {
     @Autowired
     ProdutoRepository produtoRepository;
 
-    public Produto saveOrUpdate(Produto produto){
+    public Produto salvarOuAtualizar(Produto produto){
         return produtoRepository.save(produto);
     }
 
-    public Produto findById(UUID id){
+    public Produto buscarPorId(UUID id){
         return produtoRepository.findById(id).get();
     }
 
-    public List<Produto> getAll(){
+    public List<Produto> buscarTodos(){
         return produtoRepository.findAll();
     }
 
-    public void delete(Produto produto){
-        Produto c = findById(produto.getId());
+    public void deletar(Produto produto){
+        Produto c = buscarPorId(produto.getId());
         produtoRepository.delete(c);
     }
 }

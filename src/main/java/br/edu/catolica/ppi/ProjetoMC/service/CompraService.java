@@ -15,20 +15,20 @@ public class CompraService {
     @Autowired
     CompraRepository compraRepository;
 
-    public Compra saveOrUpdate(Compra compra){
+    public Compra salvarOuAtualizar(Compra compra){
         return compraRepository.save(compra);
     }
 
-    public Compra findById(UUID id){
+    public Compra buscarPorId(UUID id){
         return compraRepository.findById(id).get();
     }
 
-    public List<Compra> getAll(){
+    public List<Compra> buscarTodos(){
         return compraRepository.findAll();
     }
 
-    public void delete(Compra compra){
-        Compra c = findById(compra.getId());
+    public void deletar(Compra compra){
+        Compra c = buscarPorId(compra.getId());
         compraRepository.delete(c);
     }
 }

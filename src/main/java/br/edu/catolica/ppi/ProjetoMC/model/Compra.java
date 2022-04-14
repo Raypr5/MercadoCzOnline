@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -38,7 +39,7 @@ public class Compra {
     @OneToOne
     private Sacola sacola;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     private Cliente cliente;
 
     @Enumerated(EnumType.STRING)

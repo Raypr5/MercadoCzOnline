@@ -14,20 +14,20 @@ public class TipoBoletoService {
     @Autowired
     TipoBoletoRepository tipoBoletoRepository;
 
-    public TipoBoleto saveOrUpdate(TipoBoleto tipoBoleto){
+    public TipoBoleto salvarOuAtualizar(TipoBoleto tipoBoleto){
         return tipoBoletoRepository.save(tipoBoleto);
     }
 
-    public List<TipoBoleto> getAll(){
+    public List<TipoBoleto> buscarTodos(){
         return tipoBoletoRepository.findAll();
     }
 
-    public TipoBoleto findById(UUID id){
+    public TipoBoleto buscarPorId(UUID id){
         return tipoBoletoRepository.findById(id).get();
     }
 
-    public void delete(TipoBoleto tipoBoleto){
-        TipoBoleto t = findById(tipoBoleto.getId());
+    public void deletar(TipoBoleto tipoBoleto){
+        TipoBoleto t = buscarPorId(tipoBoleto.getId());
         tipoBoletoRepository.delete(t);
     }
 }

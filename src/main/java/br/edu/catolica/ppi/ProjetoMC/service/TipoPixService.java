@@ -15,20 +15,20 @@ public class TipoPixService {
     @Autowired
     TipoPixRepository tipoPixRepository;
 
-    public TipoPix saveOrUpdate(TipoPix tipoPix){
+    public TipoPix salvarOuAtualizar(TipoPix tipoPix){
         return tipoPixRepository.save(tipoPix);
     }
 
-    public TipoPix findById(UUID id){
+    public TipoPix buscarPorId(UUID id){
         return tipoPixRepository.findById(id).get();
     }
 
-    public List<TipoPix> getAll(){
+    public List<TipoPix> buscarTodos(){
         return tipoPixRepository.findAll();
     }
 
-    public void delete(TipoPix tipoPix){
-        TipoPix c = findById(tipoPix.getId());
+    public void deletar(TipoPix tipoPix){
+        TipoPix c = buscarPorId(tipoPix.getId());
         tipoPixRepository.delete(c);
     }
 }

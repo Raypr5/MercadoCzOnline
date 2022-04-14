@@ -21,24 +21,24 @@ public class TipoPixController {
     }
 
     @PostMapping("/salvar")
-    public ResponseEntity save(@RequestBody TipoPix tipoPix){
+    public ResponseEntity salvarOuAtualizar(@RequestBody TipoPix tipoPix){
         return ResponseEntity.ok()
-                .body(tipoPixService.saveOrUpdate(tipoPix));
+                .body(tipoPixService.salvarOuAtualizar(tipoPix));
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity getById(@PathVariable("id") UUID id){
-        return ResponseEntity.ok().body(tipoPixService.findById(id));
+    public ResponseEntity pegarPorId(@PathVariable("id") UUID id){
+        return ResponseEntity.ok().body(tipoPixService.buscarPorId(id));
     }
 
-    @GetMapping("/buscar")
-    public ResponseEntity findAll(){
-        return ResponseEntity.ok().body(tipoPixService.getAll());
+    @GetMapping("/todos")
+    public ResponseEntity buscarTodos(){
+        return ResponseEntity.ok().body(tipoPixService.buscarTodos());
     }
 
-    @DeleteMapping
-    public ResponseEntity delete(@RequestBody TipoPix tipoPix){
-        tipoPixService.delete(tipoPix);
+    @DeleteMapping("/deletar")
+    public ResponseEntity deletar(@RequestBody TipoPix tipoPix){
+        tipoPixService.deletar(tipoPix);
         return ResponseEntity.noContent().build();
     }
 }

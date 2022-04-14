@@ -21,24 +21,24 @@ public class CompraController {
     }
 
     @PostMapping("/salvar")
-    public ResponseEntity save(@RequestBody Compra compra){
+    public ResponseEntity salvarOuAtualizar(@RequestBody Compra compra){
         return ResponseEntity.ok()
-                .body(compraService.saveOrUpdate(compra));
+                .body(compraService.salvarOuAtualizar(compra));
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity getById(@PathVariable("id") UUID id){
-        return ResponseEntity.ok().body(compraService.findById(id));
+    public ResponseEntity pegarPorId(@PathVariable("id") UUID id){
+        return ResponseEntity.ok().body(compraService.buscarPorId(id));
     }
 
-    @GetMapping("/buscar")
-    public ResponseEntity findAll(){
-        return ResponseEntity.ok().body(compraService.getAll());
+    @GetMapping("/todos")
+    public ResponseEntity buscarTodos(){
+        return ResponseEntity.ok().body(compraService.buscarTodos());
     }
 
-    @DeleteMapping
-    public ResponseEntity delete(@RequestBody Compra compra){
-        compraService.delete(compra);
+    @DeleteMapping("/deletar")
+    public ResponseEntity deletar(@RequestBody Compra compra){
+        compraService.deletar(compra);
         return ResponseEntity.noContent().build();
     }
 }

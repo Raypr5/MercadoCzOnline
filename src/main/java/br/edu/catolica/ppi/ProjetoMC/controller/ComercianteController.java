@@ -21,24 +21,24 @@ public class ComercianteController {
     }
 
     @PostMapping("/salvar")
-    public ResponseEntity save(@RequestBody Comerciante comerciante){
+    public ResponseEntity salvarOuAtualizar(@RequestBody Comerciante comerciante){
         return ResponseEntity.ok()
-                .body(comercianteService.saveOrUpdate(comerciante));
+                .body(comercianteService.salvarOuAtualizar(comerciante));
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity getById(@PathVariable("id") UUID id){
-        return ResponseEntity.ok().body(comercianteService.findById(id));
+    public ResponseEntity pegarPorId(@PathVariable("id") UUID id){
+        return ResponseEntity.ok().body(comercianteService.buscarPorId(id));
     }
 
-    @GetMapping("/buscar")
-    public ResponseEntity findAll(){
-        return ResponseEntity.ok().body(comercianteService.getAll());
+    @GetMapping("/todos")
+    public ResponseEntity buscarTodos(){
+        return ResponseEntity.ok().body(comercianteService.buscarTodos());
     }
 
-    @DeleteMapping
-    public ResponseEntity delete(@RequestBody Comerciante comerciante){
-        comercianteService.delete(comerciante);
+    @DeleteMapping("/deletar")
+    public ResponseEntity deletar(@RequestBody Comerciante comerciante){
+        comercianteService.deletar(comerciante);
         return ResponseEntity.noContent().build();
     }
 }

@@ -19,25 +19,25 @@ public class TipoBoletoController {
     }
 
     @PostMapping("/salvar")
-    public ResponseEntity save(@RequestBody TipoBoleto tipoBoleto){
+    public ResponseEntity salvarOuAtualizar(@RequestBody TipoBoleto tipoBoleto){
         return ResponseEntity.ok()
-                .body(tipoBoletoService.saveOrUpdate(tipoBoleto));
+                .body(tipoBoletoService.salvarOuAtualizar(tipoBoleto));
     }
 
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity getById(@PathVariable("id") UUID id){
-        return ResponseEntity.ok().body(tipoBoletoService.findById(id));
+    public ResponseEntity pegarPorId(@PathVariable("id") UUID id){
+        return ResponseEntity.ok().body(tipoBoletoService.buscarPorId(id));
     }
 
-    @GetMapping("/buscar")
-    public ResponseEntity findAll(){
-        return ResponseEntity.ok().body(tipoBoletoService.getAll());
+    @GetMapping("/todos")
+    public ResponseEntity buscarTodos(){
+        return ResponseEntity.ok().body(tipoBoletoService.buscarTodos());
     }
 
-    @DeleteMapping
-    public ResponseEntity delete(@RequestBody TipoBoleto tipoBoleto){
-        tipoBoletoService.delete(tipoBoleto);
+    @DeleteMapping("/deletar")
+    public ResponseEntity deletar(@RequestBody TipoBoleto tipoBoleto){
+        tipoBoletoService.deletar(tipoBoleto);
         return ResponseEntity.noContent().build();
     }
 }

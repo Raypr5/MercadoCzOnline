@@ -21,24 +21,24 @@ public class ProdutoController {
     }
 
     @PostMapping("/salvar")
-    public ResponseEntity save(@RequestBody Produto produto){
+    public ResponseEntity salvarOuAtualizar(@RequestBody Produto produto){
         return ResponseEntity.ok()
-                .body(produtoService.saveOrUpdate(produto));
+                .body(produtoService.salvarOuAtualizar(produto));
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity getById(@PathVariable("id") UUID id){
-        return ResponseEntity.ok().body(produtoService.findById(id));
+    public ResponseEntity pegarPorId(@PathVariable("id") UUID id){
+        return ResponseEntity.ok().body(produtoService.buscarPorId(id));
     }
 
-    @GetMapping("/buscar")
-    public ResponseEntity findAll(){
-        return ResponseEntity.ok().body(produtoService.getAll());
+    @GetMapping("/todos")
+    public ResponseEntity buscarTodos(){
+        return ResponseEntity.ok().body(produtoService.buscarTodos());
     }
 
-    @DeleteMapping
-    public ResponseEntity delete(@RequestBody Produto produto){
-        produtoService.delete(produto);
+    @DeleteMapping("/deletar")
+    public ResponseEntity deletar(@RequestBody Produto produto){
+        produtoService.deletar(produto);
         return ResponseEntity.noContent().build();
     }
 }

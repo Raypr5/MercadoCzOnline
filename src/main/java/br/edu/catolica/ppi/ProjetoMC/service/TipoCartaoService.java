@@ -17,20 +17,20 @@ public class TipoCartaoService {
     @Autowired
     TipoCartaoRepository tipoCartaoRepository;
 
-    public TipoCartao saveOrUpdate(TipoCartao tipoCartao){
+    public TipoCartao salvarOuAtualizar(TipoCartao tipoCartao){
         return tipoCartaoRepository.save(tipoCartao);
     }
 
-    public TipoCartao findById(UUID id){
+    public TipoCartao buscarPorId(UUID id){
         return tipoCartaoRepository.findById(id).get();
     }
 
-    public List<TipoCartao> getAll(){
+    public List<TipoCartao> buscarTodos(){
         return tipoCartaoRepository.findAll();
     }
 
-    public void delete(TipoCartao tipoCartao){
-        TipoCartao c = findById(tipoCartao.getId());
+    public void deletar(TipoCartao tipoCartao){
+        TipoCartao c = buscarPorId(tipoCartao.getId());
         tipoCartaoRepository.delete(c);
     }
 }

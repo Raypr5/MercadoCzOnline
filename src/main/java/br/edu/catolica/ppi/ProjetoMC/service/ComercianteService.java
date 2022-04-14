@@ -16,20 +16,20 @@ public class ComercianteService {
     @Autowired
     ComercianteRepository comercianteRepository;
 
-    public Comerciante saveOrUpdate(Comerciante comerciante){
+    public Comerciante salvarOuAtualizar(Comerciante comerciante){
         return comercianteRepository.save(comerciante);
     }
 
-    public Comerciante findById(UUID id){
+    public Comerciante buscarPorId(UUID id){
         return comercianteRepository.findById(id).get();
     }
 
-    public List<Comerciante> getAll(){
+    public List<Comerciante> buscarTodos(){
         return comercianteRepository.findAll();
     }
 
-    public void delete(Comerciante comerciante){
-        Comerciante c = findById(comerciante.getId());
+    public void deletar(Comerciante comerciante){
+        Comerciante c = buscarPorId(comerciante.getId());
         comercianteRepository.delete(c);
     }
 }

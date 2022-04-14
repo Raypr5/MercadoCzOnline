@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -16,20 +17,20 @@ public class ClienteService {
     @Autowired
     ClienteRepository clienteRepository;
 
-    public Cliente saveOrUpdate(Cliente cliente){
+    public Cliente salvarOuAtualizar(Cliente cliente){
         return clienteRepository.save(cliente);
     }
 
-    public Cliente findById(UUID id){
+    public Cliente buscarPorId(UUID id){
         return clienteRepository.findById(id).get();
     }
 
-    public List<Cliente> getAll(){
+    public List<Cliente> buscarTodos(){
         return clienteRepository.findAll();
     }
 
-    public void delete(Cliente cliente){
-        Cliente c = findById(cliente.getId());
+    public void deletar(Cliente cliente) {
+        Cliente c = buscarPorId(cliente.getId());
         clienteRepository.delete(c);
     }
 }

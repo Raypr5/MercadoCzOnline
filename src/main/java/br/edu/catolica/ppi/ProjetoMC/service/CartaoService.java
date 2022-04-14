@@ -15,20 +15,20 @@ public class CartaoService {
     @Autowired
     CartaoRepository cartaoRepository;
 
-    public Cartao saveOrUpdate(Cartao cartao){
+    public Cartao salvarOuAtualizar(Cartao cartao){
         return cartaoRepository.save(cartao);
     }
 
-    public Cartao findById(UUID id){
+    public Cartao buscarPorId(UUID id){
         return cartaoRepository.findById(id).get();
     }
 
-    public List<Cartao> getAll(){
+    public List<Cartao> buscarTodos(){
         return cartaoRepository.findAll();
     }
 
-    public void delete(Cartao cartao){
-        Cartao c = findById(cartao.getId());
+    public void deletar(Cartao cartao){
+        Cartao c = buscarPorId(cartao.getId());
         cartaoRepository.delete(c);
     }
 }

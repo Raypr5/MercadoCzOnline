@@ -21,24 +21,24 @@ public class TipoCartaoController {
     }
 
     @PostMapping("/salvar")
-    public ResponseEntity save(@RequestBody TipoCartao tipoCartao){
+    public ResponseEntity salvarOuAtualizar(@RequestBody TipoCartao tipoCartao){
         return ResponseEntity.ok()
-                .body(tipoCartaoService.saveOrUpdate(tipoCartao));
+                .body(tipoCartaoService.salvarOuAtualizar(tipoCartao));
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity getById(@PathVariable("id") UUID id){
-        return ResponseEntity.ok().body(tipoCartaoService.findById(id));
+    public ResponseEntity pegarPorId(@PathVariable("id") UUID id){
+        return ResponseEntity.ok().body(tipoCartaoService.buscarPorId(id));
     }
 
-    @GetMapping("/buscar")
-    public ResponseEntity findAll(){
-        return ResponseEntity.ok().body(tipoCartaoService.getAll());
+    @GetMapping("/todos")
+    public ResponseEntity buscarTodos(){
+        return ResponseEntity.ok().body(tipoCartaoService.buscarTodos());
     }
 
-    @DeleteMapping
-    public ResponseEntity delete(@RequestBody TipoCartao tipoCartao){
-        tipoCartaoService.delete(tipoCartao);
+    @DeleteMapping("/deletar")
+    public ResponseEntity deletar(@RequestBody TipoCartao tipoCartao){
+        tipoCartaoService.deletar(tipoCartao);
         return ResponseEntity.noContent().build();
     }
 }
