@@ -17,7 +17,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Categoria {
-
+    //testando
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;

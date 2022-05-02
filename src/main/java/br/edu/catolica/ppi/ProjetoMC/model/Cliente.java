@@ -18,7 +18,7 @@ import java.util.List;
 @Data
 @Builder
 public class Cliente extends  Pessoa{
-
+// testando
     @Column(unique = true)
     private String nomeCompleto;
     @Column(unique = true)
