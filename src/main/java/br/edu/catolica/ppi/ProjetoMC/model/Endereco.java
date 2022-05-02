@@ -25,6 +25,5 @@ public class Endereco {
     private String estado;
     private String complemento;
 
-//    public Endereco removeEndereco(UUID id){
-//    }
+
 }

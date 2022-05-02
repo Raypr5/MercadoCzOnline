@@ -17,7 +17,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Cartao {
-
+    // testando
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
@@ -28,7 +28,7 @@ public class Cartao {
     @Column(unique = true)
     private String nomeDoDono;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/yy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yy")
     private LocalDate validade;
 
     private Integer cvv;

@@ -8,8 +8,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -18,7 +16,7 @@ import java.util.List;
 @Data
 @Builder
 public class Cliente extends  Pessoa{
-
+// testando
     @Column(unique = true)
     private String nomeCompleto;
     @Column(unique = true)

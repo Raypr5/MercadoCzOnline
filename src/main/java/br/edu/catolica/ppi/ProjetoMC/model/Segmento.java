@@ -5,23 +5,22 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.net.URL;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.UUID;
 
 @Entity
-@Data
 @Builder
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
-public class TipoBoleto extends TipoPagamento{
+@AllArgsConstructor
+public class Segmento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(unique = true)
-    private URL linkPdf;
-
-    private Integer codigoDeBarra;
+    private String nome;
 }

@@ -4,9 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import javax.persistence.*;
-import java.net.URL;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.UUID;
 
 @Entity
@@ -14,14 +17,11 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class TipoBoleto extends TipoPagamento{
+public class StatusDeEntrega {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(unique = true)
-    private URL linkPdf;
-
-    private Integer codigoDeBarra;
+    private String nome;
 }
