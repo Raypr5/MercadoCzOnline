@@ -4,26 +4,24 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.UUID;
 
-
-@Embeddable
+@Entity
+@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class Endereco {
-    private String rua;
-    private String bairro;
-    private String cep;
-    private String cidade;
-    private String estado;
-    private String complemento;
+public class StatusDeEntrega {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
 
+    private String nome;
 }

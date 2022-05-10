@@ -1,6 +1,5 @@
 package br.edu.catolica.ppi.ProjetoMC.model;
 
-import br.edu.catolica.ppi.ProjetoMC.enums.StatusDeEntrega;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -42,6 +41,6 @@ public class Compra {
     @OneToOne(cascade = CascadeType.MERGE)
     private Cliente cliente;
 
-    @Enumerated(EnumType.STRING)
+    @OneToOne(cascade = CascadeType.MERGE)
     private StatusDeEntrega statusDeEntrega;
 }

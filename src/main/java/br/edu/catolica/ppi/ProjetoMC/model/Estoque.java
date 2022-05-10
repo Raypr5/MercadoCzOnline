@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Embeddable;
 import java.util.ArrayList;
-import java.util.List;
 
 @Embeddable
 @Builder
