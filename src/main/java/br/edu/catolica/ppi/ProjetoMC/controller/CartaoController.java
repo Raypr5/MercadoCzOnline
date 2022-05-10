@@ -18,25 +18,25 @@ public class CartaoController {
         this.cartaoService = cartaoService;
     }
 
-    @PostMapping("/save")
-    public ResponseEntity save(@RequestBody Cartao cartao){
+    @PostMapping("/salvar")
+    public ResponseEntity salvarOuAtualizar(@RequestBody Cartao cartao){
         return ResponseEntity.ok()
-                .body(cartaoService.saveOrUpdate(cartao));
+                .body(cartaoService.salvarOuAtualizar(cartao));
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity getById(@PathVariable("id") UUID id){
-        return ResponseEntity.ok().body(cartaoService.findById(id));
+    public ResponseEntity pegarPorId(@PathVariable("id") UUID id){
+        return ResponseEntity.ok().body(cartaoService.buscarPorId(id));
     }
 
-    @GetMapping("/buscar")
-    public ResponseEntity findAll(){
-        return ResponseEntity.ok().body(cartaoService.getAll());
+    @GetMapping("/todos")
+    public ResponseEntity buscarTodos(){
+        return ResponseEntity.ok().body(cartaoService.buscarTodos());
     }
 
-    @DeleteMapping
-    public ResponseEntity delete(@RequestBody Cartao cartao){
-        cartaoService.delete(cartao);
+    @DeleteMapping("/deletar")
+    public ResponseEntity deletar(@RequestBody Cartao cartao){
+        cartaoService.deletar(cartao);
         return ResponseEntity.noContent().build();
     }
 }

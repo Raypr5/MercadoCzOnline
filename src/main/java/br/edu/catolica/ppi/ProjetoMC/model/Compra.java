@@ -1,11 +1,11 @@
 package br.edu.catolica.ppi.ProjetoMC.model;
 
-import br.edu.catolica.ppi.ProjetoMC.enums.StatusDeEntrega;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -38,9 +38,9 @@ public class Compra {
     @OneToOne
     private Sacola sacola;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     private Cliente cliente;
 
-    @Enumerated(EnumType.STRING)
+    @OneToOne(cascade = CascadeType.MERGE)
     private StatusDeEntrega statusDeEntrega;
 }
