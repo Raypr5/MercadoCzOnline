@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.UUID;
 
-// aqui não precisa fazer o Entity, pois ele vai embutido na tabela(classe aqui) Cliente
+
 @Embeddable
 @Builder
 @AllArgsConstructor
