@@ -25,11 +25,9 @@ public class Compra {
 
     private String comentario;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private LocalDate dataCompra;
+    private String dataCompra;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private LocalDate dataRecebimento;
+    private String dataRecebimento;
 
     @OneToOne
     private TipoPagamento tipoPagamento;

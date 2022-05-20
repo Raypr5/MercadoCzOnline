@@ -28,8 +28,7 @@ public class Cartao {
     @Column(unique = true)
     private String nomeDoDono;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yy")
-    private LocalDate validade;
+    private String validade;
 
     private Integer cvv;
 }

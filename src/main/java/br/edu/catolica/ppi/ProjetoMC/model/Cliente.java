@@ -22,8 +22,7 @@ public class Cliente extends  Pessoa{
     @Column(unique = true)
     private String cpf;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private LocalDate dataNascimento;
+    private String dataNascimento;
 
     @Embedded
     private Endereco endereco;
