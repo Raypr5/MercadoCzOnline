@@ -22,12 +22,11 @@ public class Produto {
 
     private String nome;
     private String descricao;
-    // private BufferedImage foto; PRECISO ACHAR UMA OUTRA FORMA DE COLOCAR ESSA FOTO NO BANCO
     private Float valor;
     private Boolean habilitarDesconto;
     private Float valorDesconto;
 
-    @Enumerated(EnumType.STRING)
+    @Embedded
     private Categoria categoria;
 
     private Integer vezesComprado;

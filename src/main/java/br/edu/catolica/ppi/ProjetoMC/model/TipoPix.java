@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.net.URL;
-import java.util.UUID;
 
 @Entity
 @Data

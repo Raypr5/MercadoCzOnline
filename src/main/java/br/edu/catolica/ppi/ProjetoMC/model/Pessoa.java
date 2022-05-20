@@ -21,7 +21,7 @@ public abstract class Pessoa {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private LocalDate dataCadastramento;
+    private String dataCadastramento;
     private String email;
     private String whatsapp;
     // private BufferedImage foto; PRECISO ACHAR UMA FORMA MELHOR DE COLOCAR ESSA FOTO NO BANCO

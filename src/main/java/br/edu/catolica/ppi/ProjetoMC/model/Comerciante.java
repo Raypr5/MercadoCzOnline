@@ -22,7 +22,7 @@ public class Comerciante extends Pessoa {
     @Column(unique = true)
     private String cpf_cnpj;
 
-    @Enumerated(EnumType.STRING)
+    @Embedded
     private Segmento segmento;
 
     @Embedded
