@@ -26,7 +26,7 @@ public class Produto {
     private Boolean habilitarDesconto;
     private Float valorDesconto;
 
-    @Enumerated(EnumType.STRING)
+    @OneToOne
     private Categoria categoria;
 
     private Integer vezesComprado;

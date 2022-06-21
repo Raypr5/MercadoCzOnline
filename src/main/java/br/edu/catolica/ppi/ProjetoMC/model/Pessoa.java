@@ -1,5 +1,6 @@
 package br.edu.catolica.ppi.ProjetoMC.model;
 
+import br.edu.catolica.ppi.ProjetoMC.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,6 +25,11 @@ public abstract class Pessoa {
     private LocalDate dataCadastramento;
     private String email;
     private String whatsapp;
+
+    private String senha;
+
+    @Enumerated(EnumType.STRING)
+    private Perfil perfil;
     // private BufferedImage foto; PRECISO ACHAR UMA FORMA MELHOR DE COLOCAR ESSA FOTO NO BANCO
 
 
