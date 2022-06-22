@@ -21,8 +21,12 @@ public class ClienteController {
 
     @PostMapping("/salvar")
     public ResponseEntity salvarOuAtualizar(@RequestBody Cliente cliente){
-        return ResponseEntity.ok()
-                .body(clienteService.salvarOuAtualizar(cliente));
+        try{
+            return ResponseEntity.ok()
+                    .body(clienteService.salvarOuAtualizar(cliente));
+        }catch (Exception ex){
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @GetMapping("/buscar/{id}")
@@ -35,9 +39,14 @@ public class ClienteController {
         return ResponseEntity.ok().body(clienteService.buscarTodos());
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity deletar(@RequestBody Cliente cliente){
-        clienteService.deletar(cliente);
-        return ResponseEntity.noContent().build();
+    @GetMapping("/delete/{id}")
+    public ResponseEntity deletar(@PathVariable("id") UUID id){
+        try{
+            var cliente = clienteService.buscarPorId(id);
+            clienteService.deletar(cliente);
+            return ResponseEntity.noContent().build();
+        }catch (Exception ex){
+            return ResponseEntity.internalServerError().build();
+        }
     }
 }

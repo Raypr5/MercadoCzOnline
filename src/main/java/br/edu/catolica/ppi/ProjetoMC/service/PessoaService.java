@@ -5,7 +5,9 @@ import br.edu.catolica.ppi.ProjetoMC.model.Pessoa;
 import br.edu.catolica.ppi.ProjetoMC.repository.PessoaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class PessoaService {
@@ -19,4 +21,13 @@ public class PessoaService {
     public Optional<Pessoa> login(PessoaDTO pessoaDTO){
         return pessoaRepository.findByEmailAndSenha(pessoaDTO.getEmail(), pessoaDTO.getSenha());
     }
+
+    public List<Pessoa> getAll(){
+        return pessoaRepository.findAll();
+    }
+
+    public  Optional<Pessoa> findById(UUID id){
+        return pessoaRepository.findById(id);
+    }
+
 }
